@@ -1,0 +1,130 @@
+.banner {
+  background-color: var(--very-light-gray);
+  position: relative;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: unset;
+
+    @media screen and (min-width: $bp-md) {
+      flex-direction: row;
+    }
+
+    @media screen and (min-width: $bp-lg) {
+      max-width: 140rem;
+      margin: auto;
+      padding: 0 2.5rem;
+    }
+
+    @media screen and (min-width: $bp-xl) {
+      max-width: 140rem;
+      margin: auto;
+      padding: 0 5rem;
+    }
+  }
+
+  &__content {
+    order: 1;
+    padding: 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+
+    @media screen and (min-width: $bp-md) {
+      flex: 1;
+      order: 0;
+    }
+
+    @media screen and (min-width: $bp-lg) {
+      align-items: flex-start;
+      text-align: start;
+      padding: 6rem 7rem 6rem 0;
+    }
+
+    @media screen and (min-width: $bp-xl) {
+      padding: 6rem 0;
+    }
+  }
+
+  &__title {
+    line-height: 1.3;
+    @media screen and (min-width: $bp-xl) {
+      width: 50%;
+    }
+  }
+
+  &__desc {
+    @media screen and (min-width: $bp-xl) {
+      width: 70%;
+    }
+  }
+
+  &__img--mobile {
+    width: 100%;
+    height: 38rem;
+    position: relative;
+
+    @media screen and (min-width: $bp-md) {
+      width: unset;
+      flex: 1;
+      height: 40rem;
+    }
+
+    @media screen and (min-width: $bp-lg) {
+      height: 45rem;
+    }
+
+    @media screen and (min-width: $bp-xl) {
+      height: 50rem;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // relative path (main.scss)
+      background-image: url("../images/bg-intro-mobile.svg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @media screen and (min-width: $bp-md) {
+        background-image: url("../images/bg-intro-desktop.svg");
+      }
+
+      @media screen and (min-width: $bp-xl) {
+        background-size: 100rem 82rem;
+        background-position: -4rem -24rem;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 90%;
+      background-image: url("../images/image-mockups.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center bottom;
+
+      @media screen and (min-width: $bp-sm) {
+        height: 100%;
+        background-position: center center;
+      }
+
+      @media screen and (min-width: $bp-lg) {
+        background-position: 6rem bottom;
+        height: 130%;
+      }
+    }
+  }
+}

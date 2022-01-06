@@ -1,0 +1,126 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2.5rem;
+  background-color: var(----very-light-gray);
+
+  @media screen and (min-width: $bp-xl) {
+    padding: 2rem 5rem;
+  }
+
+  .logo {
+    display: block;
+  }
+
+  &__nav {
+    position: fixed;
+    z-index: 100;
+    display: block;
+    top: -100%;
+    left: 5%;
+    width: 90%;
+    background-color: #fff;
+    border-radius: 5px;
+    color: var(--dark-blue);
+    font-weight: bold;
+    padding: 3rem 0;
+    transition: top 0.3s ease-out;
+
+    @media screen and (min-width: $bp-md) {
+      position: relative;
+      z-index: 0;
+      top: unset;
+      left: unset;
+      width: unset;
+      border-radius: unset;
+      color: var(--grayish-blue);
+      font-weight: normal;
+      padding: unset;
+      transition: unset;
+    }
+
+    .nav__list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+
+      @media screen and (min-width: $bp-md) {
+        flex-direction: row;
+      }
+
+      @media screen and (min-width: $bp-lg) {
+        gap: 3rem;
+      }
+    }
+
+    .nav__item {
+      position: relative;
+
+      &:hover::before {
+        transform: scale(1);
+      }
+      &::before {
+        @media screen and (min-width: $bp-md) {
+          content: "";
+          position: absolute;
+          bottom: -2rem;
+          height: 4px;
+          width: 100%;
+          transform: scale(0);
+          transition: transform 0.2s ease-out;
+          background-color: var(--lime-green);
+        }
+
+        @media screen and (min-width: $bp-lg) {
+          bottom: -3rem;
+        }
+      }
+    }
+  }
+
+  &__nav.show {
+    top: 8%;
+  }
+
+  .hamburger-btn {
+    z-index: 20;
+  }
+
+  .close-btn {
+    display: none;
+    z-index: 20;
+  }
+
+  .hamburger-btn,
+  .close-btn {
+    @media screen and (min-width: $bp-md) {
+      display: none;
+    }
+  }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px);
+  }
+
+  .overlay.show {
+    display: block;
+  }
+
+  &__action {
+    display: none;
+
+    @media screen and (min-width: $bp-lg) {
+      display: block;
+    }
+  }
+}
