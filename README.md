@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://www.frontendmentor.io/profile/yuRicky09](https://www.frontendmentor.io/profile/yuRicky09)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://easybank-langing-yulight.netlify.app/](https://easybank-langing-yulight.netlify.app/)
 
 ## My process
 
